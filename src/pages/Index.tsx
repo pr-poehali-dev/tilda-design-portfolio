@@ -12,113 +12,113 @@ const NAV_LINKS = [
   { label: "Блог", href: "#blog" },
 ];
 
-const MARQUEE_WORDS = ["Баланс", "Развитие", "Ясность", "Свобода", "Энергия", "Рост", "Успех", "Смелость"];
+const MARQUEE_WORDS = ["Tilda", "Figma", "Дизайн", "Лендинг", "Интернет-магазин", "Верстка", "Tilda", "Сайт под ключ"];
 
 const SERVICES = [
   {
-    icon: "Compass",
-    title: "Карьерный коучинг",
-    desc: "Индивидуальные сессии для тех, кто хочет понять своё призвание и построить карьеру мечты.",
-    price: "от 8 000 ₽",
+    icon: "Layers",
+    title: "Перенос макета из Figma",
+    desc: "Быстро и аккуратно верстаю любые макеты на Tilda — пиксель в пиксель, без лишних вопросов.",
+    price: "от 5 000 ₽",
     color: "bg-brand-blue",
   },
   {
-    icon: "Users",
-    title: "Работа с командой",
-    desc: "Помогаю руководителям выстраивать эффективные команды и создавать здоровую культуру.",
-    price: "от 25 000 ₽",
+    icon: "ShoppingBag",
+    title: "Сайты и лендинги",
+    desc: "Создаю стильные интернет-магазины, продающие лендинги и удобные корпоративные сайты.",
+    price: "от 15 000 ₽",
     color: "bg-brand-orange",
   },
   {
-    icon: "Sparkles",
-    title: "Личная трансформация",
-    desc: "Глубинная работа с убеждениями, страхами и ограничениями, мешающими двигаться вперёд.",
-    price: "от 12 000 ₽",
+    icon: "RefreshCw",
+    title: "Перенос с других платформ",
+    desc: "Копирую проекты с WordPress, Joomla, Wix и других CMS на Tilda — без потери контента.",
+    price: "от 8 000 ₽",
     color: "bg-brand-navy",
   },
   {
-    icon: "Zap",
-    title: "Интенсив за 1 день",
-    desc: "Однодневная VIP-сессия с полным погружением — для тех, кто ценит своё время.",
-    price: "45 000 ₽",
+    icon: "SearchCheck",
+    title: "Аудит и улучшение",
+    desc: "Разбираю ваш сайт на Tilda, нахожу слабые места и делаю его быстрее, красивее и эффективнее.",
+    price: "от 3 000 ₽",
     color: "bg-brand-blue-dark",
   },
 ];
 
 const PORTFOLIO_ITEMS = [
-  { id: 1, category: "карьера", title: "Анна, 32 года", sub: "Из найма — в собственный бизнес", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop" },
-  { id: 2, category: "лидерство", title: "Михаил, 41 год", sub: "Стал директором крупной компании", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop" },
-  { id: 3, category: "баланс", title: "Елена, 38 лет", sub: "Нашла гармонию между работой и семьёй", img: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=300&fit=crop" },
-  { id: 4, category: "карьера", title: "Дмитрий, 29 лет", sub: "Переехал и построил карьеру за рубежом", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" },
-  { id: 5, category: "лидерство", title: "Ольга, 45 лет", sub: "Создала команду-мечту", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop" },
-  { id: 6, category: "баланс", title: "Сергей, 35 лет", sub: "Снизил стресс, повысил доход", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop" },
+  { id: 1, category: "лендинг", title: "Студия красоты", sub: "Продающий лендинг с онлайн-записью", img: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop" },
+  { id: 2, category: "магазин", title: "Бутик одежды", sub: "Интернет-магазин с каталогом и корзиной", img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop" },
+  { id: 3, category: "корпоратив", title: "IT-компания", sub: "Корпоративный сайт с командой и услугами", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop" },
+  { id: 4, category: "лендинг", title: "Онлайн-школа", sub: "Курс по продвижению — перенос из Figma", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=300&fit=crop" },
+  { id: 5, category: "магазин", title: "Цветочный магазин", sub: "Магазин с доставкой и фильтром по букетам", img: "https://images.unsplash.com/photo-1487530811015-780ce39de73d?w=400&h=300&fit=crop" },
+  { id: 6, category: "корпоратив", title: "Фотограф", sub: "Портфолио с галереей и формой бронирования", img: "https://images.unsplash.com/photo-1452780212461-8ef04b6ddfc4?w=400&h=300&fit=crop" },
 ];
 
-const PORTFOLIO_CATS = ["все", "карьера", "лидерство", "баланс"];
+const PORTFOLIO_CATS = ["все", "лендинг", "магазин", "корпоратив"];
 
 const REVIEWS = [
   {
-    name: "Наталья К.",
-    role: "Финансовый директор",
-    text: "За три месяца работы я наконец поняла, чего хочу по-настоящему. Получила повышение и перестала бояться говорить «нет».",
+    name: "Светлана В.",
+    role: "Владелец студии красоты",
+    text: "Ирина перенесла наш макет из Figma за 3 дня. Всё точно, аккуратно, без единого вопроса. Сайт получился лучше, чем мы ожидали!",
     stars: 5,
   },
   {
-    name: "Алексей М.",
-    role: "Предприниматель",
-    text: "Думал, что коучинг — это не для меня. Но эти сессии буквально изменили то, как я смотрю на бизнес и на себя.",
+    name: "Максим О.",
+    role: "Основатель онлайн-школы",
+    text: "Перешли с WordPress на Tilda — думали, будет долго и больно. Ирина всё сделала быстро и чисто. Теперь сами управляем сайтом без программистов.",
     stars: 5,
   },
   {
-    name: "Марина Л.",
-    role: "HR-директор",
-    text: "Работаем уже полгода. Команда стала эффективнее, а я — спокойнее. Рекомендую каждому руководителю.",
+    name: "Анна Г.",
+    role: "Предприниматель, магазин украшений",
+    text: "Прошла мастер-класс по Tilda — наконец разобралась, как самостоятельно редактировать сайт. Очень понятно объясняет даже сложные вещи.",
     stars: 5,
   },
 ];
 
 const WORKSHOPS = [
   {
-    date: "15 мая 2025",
-    title: "Карьера без компромиссов",
+    date: "10 мая 2025",
+    title: "Tilda с нуля за 1 день",
+    format: "Онлайн",
+    seats: "15 мест",
+    price: "2 900 ₽",
+  },
+  {
+    date: "24 мая 2025",
+    title: "Figma → Tilda: перенос макетов",
+    format: "Онлайн",
+    seats: "10 мест",
+    price: "4 500 ₽",
+  },
+  {
+    date: "14 июня 2025",
+    title: "Интернет-магазин на Tilda",
     format: "Онлайн",
     seats: "12 мест",
-    price: "5 000 ₽",
-  },
-  {
-    date: "7 июня 2025",
-    title: "Лидерство изнутри",
-    format: "Москва",
-    seats: "8 мест",
-    price: "12 000 ₽",
-  },
-  {
-    date: "20 июня 2025",
-    title: "Баланс. Это возможно",
-    format: "Онлайн",
-    seats: "20 мест",
-    price: "3 500 ₽",
+    price: "3 900 ₽",
   },
 ];
 
 const BLOG_POSTS = [
   {
-    tag: "Карьера",
-    title: "5 признаков, что вам нужен карьерный коуч прямо сейчас",
-    excerpt: "Если вы просыпаетесь в воскресенье и думаете о работе — это уже сигнал...",
-    readTime: "4 мин",
-  },
-  {
-    tag: "Лидерство",
-    title: "Почему «умные» руководители делают всё сами и как это остановить",
-    excerpt: "Делегирование — это не слабость. Это суперсила, которую нужно развивать...",
-    readTime: "6 мин",
-  },
-  {
-    tag: "Баланс",
-    title: "Как перестать работать по ночам и не потерять результат",
-    excerpt: "Продуктивность — это не про количество часов. Вот что реально работает...",
+    tag: "Tilda",
+    title: "5 ошибок при верстке сайта на Tilda, которые убивают конверсию",
+    excerpt: "Часто вижу одни и те же ошибки у новичков. Разбираю каждую с примерами и объясняю, как исправить...",
     readTime: "5 мин",
+  },
+  {
+    tag: "Figma",
+    title: "Как правильно подготовить макет в Figma для верстки на Tilda",
+    excerpt: "Хороший макет — это половина успеха. Рассказываю, что нужно сделать до передачи верстальщику...",
+    readTime: "7 мин",
+  },
+  {
+    tag: "SEO",
+    title: "Почему ваш сайт на Tilda не находят в Google: разбираю типичные причины",
+    excerpt: "SEO на Tilda — это реально, если знать несколько простых правил. Делюсь чек-листом...",
+    readTime: "6 мин",
   },
 ];
 
@@ -172,7 +172,7 @@ export default function Index() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#FAF0E6]/95 shadow-md backdrop-blur-sm" : "bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="font-accent text-2xl font-bold tracking-widest text-brand-blue uppercase leading-none">
-            Имя<br/><span className="text-brand-orange">Фамилия</span>
+            Ирина<br/><span className="text-brand-orange">Завадская</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -191,7 +191,7 @@ export default function Index() {
             href="#contact"
             className="hidden md:inline-flex items-center gap-2 bg-brand-orange text-white font-accent text-sm font-semibold tracking-widest uppercase px-6 py-3 rounded-full hover:bg-[#C94E1A] transition-colors"
           >
-            Связаться
+            Обсудить проект
           </a>
 
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-brand-navy">
@@ -219,18 +219,18 @@ export default function Index() {
         <div className="flex flex-col md:flex-row w-full min-h-screen">
           <div className="flex-1 flex flex-col justify-center px-10 md:px-20 pt-32 pb-16 md:py-0 relative z-10">
             <p className="font-accent text-[#F2C9A8] text-sm tracking-[0.3em] uppercase mb-6" style={{ animation: "fade-up 0.7s ease-out 0.1s both" }}>
-              Личный коуч • Ваш со-заговорщик
+              Веб-дизайнер • Специалист Tilda
             </p>
             <h1 className="font-display italic text-white text-5xl md:text-7xl leading-[1.05] mb-6">
-              Ваша карьера.<br/>
-              Ваша жизнь.<br/>
-              <span className="text-[#F2C9A8]">Ваши правила.</span>
+              Сайты на Tilda,<br/>
+              которые<br/>
+              <span className="text-[#F2C9A8]">работают.</span>
             </h1>
             <p className="font-accent text-[#F2C9A8] text-sm md:text-base tracking-widest uppercase mb-4">
-              Без компромиссов. Без выгорания. Без масок.
+              Быстро. Красиво. Без лишних вопросов.
             </p>
             <p className="text-white/70 text-base max-w-sm mb-10">
-              Устали делать всё «правильно» и жертвовать собой? Пора это изменить.
+              Создаю сайты под ключ, переношу макеты из Figma и помогу разобраться с любой задачей на Tilda.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#contact"
@@ -252,8 +252,8 @@ export default function Index() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-brand-blue via-transparent to-transparent hidden md:block" />
             <div className="absolute bottom-8 left-6 bg-brand-orange text-white rounded-2xl px-5 py-3 shadow-xl">
-              <div className="font-accent text-xl font-bold">200+</div>
-              <div className="text-xs tracking-wider uppercase opacity-90">Изменённых жизней</div>
+              <div className="font-accent text-xl font-bold">120+</div>
+              <div className="text-xs tracking-wider uppercase opacity-90">Сайтов сдано</div>
             </div>
           </div>
         </div>
@@ -280,8 +280,8 @@ export default function Index() {
                 className="relative z-10 w-full rounded-2xl object-cover aspect-[4/5]"
               />
               <div className="absolute -bottom-6 -right-6 bg-brand-blue text-white rounded-2xl p-5 z-20 shadow-xl">
-                <div className="font-display italic text-2xl">7 лет</div>
-                <div className="font-accent text-xs tracking-widest uppercase opacity-80">опыта в коучинге</div>
+                <div className="font-display italic text-2xl">4 года</div>
+                <div className="font-accent text-xs tracking-widest uppercase opacity-80">опыта на Tilda</div>
               </div>
             </div>
           </AnimSection>
@@ -289,20 +289,20 @@ export default function Index() {
           <AnimSection>
             <p className="font-accent text-brand-orange text-sm tracking-[0.3em] uppercase mb-4">Обо мне</p>
             <h2 className="font-display italic text-brand-blue text-4xl md:text-5xl leading-tight mb-6">
-              Когда в последний раз кто-то думал о <span className="underline decoration-brand-orange">вас</span>?
+              Привет, я Ирина — <span className="underline decoration-brand-orange">веб-дизайнер</span> на Tilda
             </h2>
             <p className="text-brand-navy/80 leading-relaxed mb-4">
-              Ваши цели, ваш рост, ваше будущее — я здесь именно для этого. Никаких шаблонных советов. Только конкретная, честная работа, которая реально меняет жизнь.
+              Специализируюсь на создании сайтов на Tilda: от переноса макетов из Figma до полноценных интернет-магазинов и корпоративных сайтов.
             </p>
             <p className="text-brand-navy/80 leading-relaxed mb-8">
-              Привет! Я — ваш со-заговорщик в построении жизни, которую вы хотите. Не той, которую ожидают другие.
+              Работаю быстро и аккуратно. Объясняю всё понятным языком — без технического жаргона. После сдачи проекта вы сможете управлять сайтом самостоятельно.
             </p>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
-                { num: "200+", label: "клиентов" },
-                { num: "7 лет", label: "практики" },
-                { num: "98%", label: "довольны" },
-                { num: "15+", label: "стран" },
+                { num: "120+", label: "проектов" },
+                { num: "4 года", label: "на Tilda" },
+                { num: "100%", label: "в срок" },
+                { num: "30+", label: "учеников" },
               ].map(s => (
                 <div key={s.label} className="bg-white rounded-xl p-4 border border-brand-blue/10">
                   <div className="font-display italic text-brand-blue text-3xl font-bold">{s.num}</div>
@@ -310,8 +310,8 @@ export default function Index() {
                 </div>
               ))}
             </div>
-            <a href="#contact" className="inline-flex items-center gap-2 bg-brand-blue text-white font-accent text-sm tracking-widest uppercase px-8 py-4 rounded-full hover:bg-brand-blue-dark transition-all hover:scale-105">
-              Познакомиться <Icon name="ArrowRight" size={16} />
+            <a href="#contact" className="inline-flex items-center gap-2 bg-brand-blue text-white font-accent text-sm tracking-widest uppercase px-8 py-4 rounded-full hover:bg-[#2A3580] transition-all hover:scale-105">
+              Обсудить проект <Icon name="ArrowRight" size={16} />
             </a>
           </AnimSection>
         </div>
@@ -321,10 +321,10 @@ export default function Index() {
       <section id="services" className="py-24 px-6" style={{ backgroundColor: "rgba(123,143,212,0.15)" }}>
         <div className="max-w-6xl mx-auto">
           <AnimSection>
-            <p className="font-accent text-brand-orange text-sm tracking-[0.3em] uppercase mb-3 text-center">Что я предлагаю</p>
+            <p className="font-accent text-brand-orange text-sm tracking-[0.3em] uppercase mb-3 text-center">Чем могу помочь</p>
             <h2 className="font-display italic text-brand-blue text-4xl md:text-5xl text-center mb-4">Услуги</h2>
             <p className="text-brand-navy/60 text-center max-w-xl mx-auto mb-16">
-              Каждый формат — это глубокая, живая работа. Никакого «пустого» времени.
+              Всё, что нужно для запуска и развития вашего сайта на Tilda — в одном месте.
             </p>
           </AnimSection>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -348,8 +348,8 @@ export default function Index() {
       <section id="portfolio" className="bg-[#FAF0E6] py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <AnimSection>
-            <p className="font-accent text-brand-orange text-sm tracking-[0.3em] uppercase mb-3 text-center">Результаты клиентов</p>
-            <h2 className="font-display italic text-brand-blue text-4xl md:text-5xl text-center mb-10">Портфолио историй</h2>
+            <p className="font-accent text-brand-orange text-sm tracking-[0.3em] uppercase mb-3 text-center">Мои работы</p>
+            <h2 className="font-display italic text-brand-blue text-4xl md:text-5xl text-center mb-10">Портфолио</h2>
           </AnimSection>
 
           <AnimSection>
@@ -390,7 +390,7 @@ export default function Index() {
                     <h3 className="font-display italic text-brand-blue text-xl mb-1">{item.title}</h3>
                     <p className="text-brand-navy/70 text-sm">{item.sub}</p>
                     <div className="mt-4 flex items-center gap-2 text-brand-orange font-accent text-xs tracking-wider uppercase">
-                      Читать историю <Icon name="ArrowRight" size={14} />
+                      Смотреть проект <Icon name="ArrowRight" size={14} />
                     </div>
                   </div>
                 </div>
@@ -468,7 +468,7 @@ export default function Index() {
       <section id="blog" className="bg-[#FAF0E6] py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <AnimSection>
-            <p className="font-accent text-brand-orange text-sm tracking-[0.3em] uppercase mb-3 text-center">Мысли вслух</p>
+            <p className="font-accent text-brand-orange text-sm tracking-[0.3em] uppercase mb-3 text-center">Полезное</p>
             <h2 className="font-display italic text-brand-blue text-4xl md:text-5xl text-center mb-16">Блог</h2>
           </AnimSection>
           <div className="grid md:grid-cols-3 gap-6">
@@ -501,11 +501,11 @@ export default function Index() {
         <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q15 20 30 30 T60 30' stroke='rgba(255,255,255,0.15)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E\")" }} />
         <div className="max-w-2xl mx-auto relative z-10">
           <AnimSection>
-            <p className="font-accent text-[#F2C9A8] text-sm tracking-[0.3em] uppercase mb-4 text-center">Начнём?</p>
+            <p className="font-accent text-[#F2C9A8] text-sm tracking-[0.3em] uppercase mb-4 text-center">Обсудим проект?</p>
             <h2 className="font-display italic text-white text-4xl md:text-6xl text-center leading-tight mb-4">
               Напишите мне
             </h2>
-            <p className="text-white/60 text-center mb-12">Расскажите о себе — и я отвечу в течение 24 часов.</p>
+            <p className="text-white/60 text-center mb-12">Опишите задачу — и я отвечу в течение нескольких часов.</p>
           </AnimSection>
           <AnimSection>
             <form className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
@@ -531,9 +531,12 @@ export default function Index() {
                 <label className="font-accent text-xs text-white/60 tracking-widest uppercase block mb-2">Запрос</label>
                 <select className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#F2C9A8] transition-colors">
                   <option value="" className="bg-brand-navy">Выберите тему</option>
-                  <option value="career" className="bg-brand-navy">Карьерный коучинг</option>
-                  <option value="leadership" className="bg-brand-navy">Лидерство и команда</option>
-                  <option value="workshop" className="bg-brand-navy">Мастер-класс</option>
+                  <option value="figma" className="bg-brand-navy">Перенос макета из Figma</option>
+                  <option value="site" className="bg-brand-navy">Создание сайта / лендинга</option>
+                  <option value="shop" className="bg-brand-navy">Интернет-магазин</option>
+                  <option value="migration" className="bg-brand-navy">Перенос с другой платформы</option>
+                  <option value="audit" className="bg-brand-navy">Аудит сайта</option>
+                  <option value="workshop" className="bg-brand-navy">Мастер-класс по Tilda</option>
                   <option value="other" className="bg-brand-navy">Другое</option>
                 </select>
               </div>
@@ -541,7 +544,7 @@ export default function Index() {
                 <label className="font-accent text-xs text-white/60 tracking-widest uppercase block mb-2">Сообщение</label>
                 <textarea
                   rows={4}
-                  placeholder="Расскажите немного о себе и своей ситуации..."
+                  placeholder="Расскажите о вашем проекте: что нужно сделать, есть ли макет, сроки..."
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#F2C9A8] transition-colors resize-none"
                 />
               </div>
@@ -560,7 +563,7 @@ export default function Index() {
       <footer className="bg-brand-navy border-t border-white/10 px-6 py-8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="font-accent text-xl font-bold tracking-widest text-white uppercase">
-            Имя <span className="text-brand-orange">Фамилия</span>
+            Ирина <span className="text-brand-orange">Завадская</span>
           </span>
           <p className="text-white/30 text-sm">© 2025 Все права защищены</p>
           <div className="flex gap-4">
