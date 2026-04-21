@@ -4,44 +4,34 @@
 
 @layer base {
   :root {
-    --background: 30 50% 97%;
-    --foreground: 228 52% 18%;
-
+    --background: 40 30% 98%;
+    --foreground: 0 0% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 228 52% 18%;
-
+    --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 228 52% 18%;
-
-    --primary: 228 52% 44%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 280 35% 58%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 24 60% 82%;
-    --secondary-foreground: 228 52% 18%;
-
-    --muted: 24 30% 92%;
-    --muted-foreground: 228 20% 45%;
-
-    --accent: 20 78% 54%;
+    --secondary: 330 40% 90%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 280 35% 58%;
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 228 20% 85%;
-    --input: 228 20% 85%;
-    --ring: 228 52% 44%;
-
-    --radius: 0.25rem;
-
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 10%;
+    --input: 0 0% 88%;
+    --ring: 280 35% 58%;
+    --radius: 0.75rem;
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 0 0% 26%;
+    --sidebar-primary: 0 0% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 280 35% 58%;
   }
 }
 
@@ -49,58 +39,72 @@
   * {
     @apply border-border;
   }
-
   html {
     scroll-behavior: smooth;
   }
-
   body {
     @apply bg-background text-foreground;
-    font-family: "Golos Text", sans-serif;
+    font-family: "DM Sans", sans-serif;
+    background-color: #faf8f5;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "DM Serif Display", serif;
   }
   .font-accent {
-    font-family: "Oswald", sans-serif;
+    font-family: "Playfair Display", serif;
   }
   .font-body {
-    font-family: "Golos Text", sans-serif;
+    font-family: "DM Sans", sans-serif;
   }
 
-  /* Волнистый SVG паттерн на фоне */
-  .bg-wave {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q15 20 30 30 T60 30' stroke='rgba(255,255,255,0.12)' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0 45 Q15 35 30 45 T60 45' stroke='rgba(255,255,255,0.08)' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0 15 Q15 5 30 15 T60 15' stroke='rgba(255,255,255,0.08)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
-    background-size: 60px 60px;
+  /* Карточка с чёрной обводкой — Studio Morti style */
+  .card-outlined {
+    border: 1.5px solid #1a1a1a;
+    border-radius: 1rem;
+    background: #fff;
+  }
+  .card-outlined-lavender {
+    border: 1.5px solid #1a1a1a;
+    border-radius: 1rem;
+    background: #ede0f5;
   }
 
-  .hero-wave-bg {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q15 20 30 30 T60 30' stroke='rgba(255,255,255,0.12)' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0 45 Q15 35 30 45 T60 45' stroke='rgba(255,255,255,0.08)' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0 15 Q15 5 30 15 T60 15' stroke='rgba(255,255,255,0.08)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
-    background-size: 60px 60px;
+  /* Волнистый декоративный паттерн */
+  .wave-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='40' viewBox='0 0 80 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q20 5 40 20 T80 20' stroke='%231A1A1A' fill='none' stroke-width='1' opacity='0.08'/%3E%3C/svg%3E");
+    background-size: 80px 40px;
   }
 
-  .animate-delay-100 {
+  /* Диагональная полоска-разделитель */
+  .section-divider {
+    height: 3px;
+    background: #1a1a1a;
+  }
+
+  .animate-delay-1 {
     animation-delay: 0.1s;
+    animation-fill-mode: both;
   }
-  .animate-delay-200 {
+  .animate-delay-2 {
     animation-delay: 0.2s;
+    animation-fill-mode: both;
   }
-  .animate-delay-300 {
+  .animate-delay-3 {
     animation-delay: 0.3s;
+    animation-fill-mode: both;
   }
-  .animate-delay-400 {
+  .animate-delay-4 {
     animation-delay: 0.4s;
+    animation-fill-mode: both;
   }
-  .animate-delay-500 {
+  .animate-delay-5 {
     animation-delay: 0.5s;
+    animation-fill-mode: both;
   }
-  .animate-delay-600 {
-    animation-delay: 0.6s;
-  }
-  .animate-opacity-0 {
+  .opacity-0-init {
     opacity: 0;
   }
 }

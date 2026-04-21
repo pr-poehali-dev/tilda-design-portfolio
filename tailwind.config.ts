@@ -13,15 +13,13 @@ export default {
 		container: {
 			center: true,
 			padding: '2rem',
-			screens: {
-				'2xl': '1400px'
-			}
+			screens: { '2xl': '1400px' }
 		},
 		extend: {
 			fontFamily: {
-				display: ['Cormorant Garamond', 'serif'],
-				body: ['Golos Text', 'sans-serif'],
-				accent: ['Oswald', 'sans-serif'],
+				display: ['"DM Serif Display"', 'serif'],
+				body: ['"DM Sans"', 'sans-serif'],
+				accent: ['"Playfair Display"', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -38,15 +36,15 @@ export default {
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
 				brand: {
-					blue: '#3B4FA8',
-					'blue-dark': '#2A3580',
-					'blue-light': '#7B8FD4',
-					peach: '#F2C9A8',
-					'peach-dark': '#E8B48A',
-					orange: '#E8632A',
+					cream:   '#FAF8F5',
+					black:   '#1A1A1A',
+					lavender:'#C8B4D8',
+					'lavender-light': '#EDE0F5',
+					'lavender-dark':  '#A88CC0',
+					pink:    '#F0D4E8',
+					orange:  '#E8632A',
 					'orange-dark': '#C94E1A',
-					navy: '#1A2040',
-					sand: '#FAF0E6',
+					olive:   '#8A9A5B',
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -88,20 +86,15 @@ export default {
 					to: { transform: 'translateX(-50%)' }
 				},
 				'fade-up': {
-					from: { opacity: '0', transform: 'translateY(30px)' },
+					from: { opacity: '0', transform: 'translateY(28px)' },
 					to: { opacity: '1', transform: 'translateY(0)' }
-				},
-				'fade-in': {
-					from: { opacity: '0' },
-					to: { opacity: '1' }
 				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'marquee': 'marquee 25s linear infinite',
-				'fade-up': 'fade-up 0.7s ease-out forwards',
-				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'marquee': 'marquee 28s linear infinite',
+				'fade-up': 'fade-up 0.65s ease-out forwards',
 			}
 		}
 	},
