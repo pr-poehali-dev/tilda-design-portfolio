@@ -172,10 +172,10 @@ export default function Index() {
           <div className="pb-16 lg:pb-24">
             <span className="tag tag-yellow mb-6 inline-block">Добро пожаловать</span>
 
-            <h1 className="font-display font-black uppercase leading-none mb-8"
-              style={{ fontSize: "clamp(3.5rem, 10vw, 7.5rem)", letterSpacing: "-0.01em", color: "#1A1714" }}>
+            <h1 className="heading-main mb-8"
+              style={{ fontSize: "clamp(3.5rem, 10vw, 7.5rem)", color: "#1A1714" }}>
               Создаю<br/>
-              <em className="not-italic" style={{ color: "#D4622A" }}>сайты</em><br/>
+              <span style={{ color: "#D4622A" }}>сайты</span><br/>
               на Tilda
             </h1>
 
@@ -261,7 +261,7 @@ export default function Index() {
           {/* Текст */}
           <Anim delay={120}>
             <span className="tag tag-salmon mb-5 inline-block">Обо мне</span>
-            <h2 className="font-display font-black uppercase leading-none mb-6"
+            <h2 className="heading-main mb-6"
               style={{ fontSize: "clamp(2.8rem, 6vw, 5rem)", color: "#1A1714" }}>
               Привет,<br/>
               я <em className="not-italic" style={{ color: "#D4622A" }}>Ирина</em>
@@ -305,7 +305,7 @@ export default function Index() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
               <div>
                 <span className="tag tag-yellow mb-4 inline-block">Чем могу помочь</span>
-                <h2 className="font-display font-black uppercase leading-none"
+                <h2 className="heading-main"
                   style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#1A1714" }}>
                   Услуги
                 </h2>
@@ -398,7 +398,7 @@ export default function Index() {
           <Anim>
             <div className="mb-14">
               <span className="tag tag-black mb-4 inline-block">Ближайшие события</span>
-              <h2 className="font-display font-black uppercase leading-none"
+              <h2 className="heading-main"
                 style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#1A1714" }}>
                 Мастер-классы
               </h2>
@@ -440,7 +440,7 @@ export default function Index() {
           <Anim>
             <div className="mb-14">
               <span className="tag tag-yellow mb-4 inline-block">Отзывы</span>
-              <h2 className="font-display font-black uppercase leading-none"
+              <h2 className="heading-main"
                 style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#F5EDD8" }}>
                 Что говорят клиенты
               </h2>
@@ -478,7 +478,7 @@ export default function Index() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
               <div>
                 <span className="tag tag-orange mb-4 inline-block">Полезное</span>
-                <h2 className="font-display font-black uppercase leading-none"
+                <h2 className="heading-main"
                   style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#1A1714" }}>
                   Блог
                 </h2>
@@ -516,7 +516,7 @@ export default function Index() {
       <section className="py-24 px-6 relative overflow-hidden" style={{ background: "#D4622A" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
           <div>
-            <h2 className="font-display font-black uppercase leading-none"
+            <h2 className="heading-main"
               style={{ fontSize: "clamp(3rem, 8vw, 7rem)", color: "#F5EDD8" }}>
               Готовы<br/>к запуску?
             </h2>
@@ -539,7 +539,7 @@ export default function Index() {
         <div className="max-w-2xl mx-auto">
           <Anim>
             <span className="tag tag-black mb-5 inline-block">Контакты</span>
-            <h2 className="font-display font-black uppercase leading-none mb-10"
+            <h2 className="heading-main mb-10"
               style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)", color: "#1A1714" }}>
               Напишите<br/>мне
             </h2>

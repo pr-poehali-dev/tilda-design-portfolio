@@ -59,6 +59,20 @@
   .font-serif {
     font-family: "Playfair Display", serif;
   }
+  /* Каллиграфический italic — заглавные буквы как на картинке */
+  .font-calli {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 700;
+  }
+  /* Главные заголовки: Cormorant Garamond italic bold */
+  .heading-main {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
 
   .btn {
     display: inline-flex;
