@@ -173,66 +173,66 @@ export default function Index() {
       </header>
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden" style={{ background:"#F5F0FF" }}>
-        <FloatDecor items={[
-          { emoji:"🌸", top:"8%",  left:"3%",   rotate:"-10deg", size:"2.5rem" },
-          { emoji:"⚡", top:"15%", right:"5%",  rotate:"15deg",  size:"2rem"   },
-          { emoji:"🌼", top:"62%", left:"2%",   rotate:"5deg",   size:"2rem"   },
-          { emoji:"✦",  top:"78%", right:"8%",  rotate:"-8deg",  size:"1.5rem" },
-          { emoji:"💜", top:"42%", right:"3%",  rotate:"0deg",   size:"1.5rem" },
-        ]} />
-        <img src={FLOWERS} alt="" aria-hidden
-          className="absolute bottom-0 right-0 w-56 opacity-20 pointer-events-none select-none" />
+      <section className="relative px-4 md:px-8 pt-6 pb-0 overflow-visible" style={{ background:"#D4BBEE" }}>
 
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center relative z-10">
-          <div>
-            <div className="flex flex-wrap items-center gap-2 mb-5">
-              <span className="tag tag-lavender">🌸 Tilda-специалист</span>
-              <span className="tag tag-yellow">⭐ Веб-дизайн</span>
-              <span className="tag tag-orange">⚡ Figma → Tilda</span>
-            </div>
-            <h1 className="font-display text-5xl md:text-[3.6rem] leading-[1.06] text-brand-charcoal mb-6">
-              Создаю сайты<br/>на Tilda,<br/>
-              <em className="not-italic italic text-brand-lavender-dark">которые работают.</em>
+        {/* Карточка с фото — скруглённые углы */}
+        <div className="relative rounded-3xl overflow-hidden border-2 border-brand-black mx-auto"
+          style={{ maxWidth: 1200, minHeight: "clamp(420px, 70vh, 680px)" }}>
+
+          {/* Фото на весь блок */}
+          <img src={HERO_IMG} alt="Ирина Завадская"
+            className="absolute inset-0 w-full h-full object-cover object-top" />
+
+          {/* Тонкий тёмный оверлей слева для читаемости текста */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent" />
+
+          {/* Текст поверх фото — левый верхний угол */}
+          <div className="relative z-10 p-8 md:p-12 max-w-sm">
+            <h1 className="font-display text-3xl md:text-[2.6rem] leading-[1.1] text-white mb-6">
+              Создаю&nbsp;сайты<br/>
+              на&nbsp;Tilda,&nbsp;которые<br/>
+              <em className="not-italic italic" style={{ color:"#C8E86A" }}>работают.</em>
             </h1>
-            <p className="font-body text-brand-charcoal/65 text-base leading-relaxed max-w-md mb-9">
-              Быстро и аккуратно — от переноса макета из Figma до готового интернет-магазина. 120+ проектов за 4 года.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-10">
-              <a href="#contact" className="btn-primary">Обсудить проект →</a>
-              <a href="#portfolio" className="btn-dark">Смотреть работы</a>
-            </div>
-            <div className="flex gap-7">
-              {[["120+","проектов"],["4 года","опыта"],["100%","в срок"]].map(([n,l])=>(
-                <div key={l}>
-                  <div className="font-display text-2xl italic text-brand-charcoal">{n}</div>
-                  <div className="font-body text-xs text-brand-charcoal/45 uppercase tracking-wider">{l}</div>
-                </div>
-              ))}
-            </div>
+            <a href="#about" className="inline-flex items-center gap-2 font-body font-bold text-brand-charcoal text-sm transition-all hover:scale-105 active:scale-95"
+              style={{
+                background:"#C8E86A",
+                border:"2px solid #1E1B1E",
+                borderRadius:"999px",
+                padding:"0.65rem 1.6rem",
+                boxShadow:"3px 3px 0 #1E1B1E",
+              }}>
+              Узнать подробнее
+            </a>
           </div>
 
-          {/* Фото */}
-          <div className="relative flex justify-center">
-            <div className="relative w-72 md:w-80">
-              <div className="absolute top-4 left-4 w-full h-full rounded-2xl border-2 border-brand-black bg-brand-yellow" />
-              <div className="relative border-2 border-brand-black rounded-2xl overflow-hidden shadow-[6px_6px_0_#1E1B1E]">
-                <img src={HERO_IMG} alt="Ирина Завадская" className="w-full aspect-[3/4] object-cover object-top" />
-              </div>
-              <div className="absolute -bottom-5 -right-5 bg-brand-orange border-2 border-brand-black rounded-2xl px-4 py-2.5 shadow-[4px_4px_0_#1E1B1E]">
-                <div className="font-display text-2xl italic text-brand-charcoal">120+</div>
-                <div className="font-body text-[10px] uppercase tracking-widest text-brand-charcoal/70">сайтов сдано</div>
-              </div>
-              <span className="absolute -top-4 -right-4 text-3xl rotate-12 select-none">🌸</span>
-              <span className="absolute top-1/3 -left-8 text-2xl -rotate-12 select-none">⚡</span>
-              <span className="absolute -bottom-2 left-4 text-xl select-none">🌼</span>
-            </div>
+          {/* Огромная надпись снизу — выходит за рамку */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 overflow-hidden leading-none pointer-events-none"
+            style={{ transform:"translateY(35%)" }}>
+            <p className="font-display font-black text-brand-charcoal whitespace-nowrap text-center select-none"
+              style={{ fontSize:"clamp(70px,13vw,160px)", letterSpacing:"-0.02em", lineHeight:1 }}>
+              Ирина Завадская
+            </p>
+          </div>
+
+          {/* Бейдж-овал правый нижний */}
+          <div className="absolute bottom-6 right-6 z-30 font-body font-black text-brand-charcoal tracking-widest uppercase text-sm"
+            style={{
+              background:"#C8E86A",
+              border:"2px solid #1E1B1E",
+              borderRadius:"999px",
+              padding:"0.6rem 1.4rem",
+              boxShadow:"3px 3px 0 #1E1B1E",
+            }}>
+            Tilda ✦
           </div>
         </div>
+
+        {/* Пространство под выезжающим текстом */}
+        <div style={{ height:"clamp(44px, 8vw, 90px)" }} />
       </section>
 
       {/* ВОЛНА → бегущая строка */}
-      <WaveDown top="#F5F0FF" bot="#2A2530" />
+      <WaveDown top="#D4BBEE" bot="#2A2530" />
       <div className="bg-brand-charcoal overflow-hidden py-3">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...MARQUEE_WORDS,...MARQUEE_WORDS,...MARQUEE_WORDS,...MARQUEE_WORDS].map((w,i)=>(
