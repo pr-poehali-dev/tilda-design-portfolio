@@ -87,59 +87,77 @@ export default function Index() {
     <div className="font-body text-brand-black overflow-x-hidden" style={{ background: "#F5EDD8" }}>
 
       {/* ══════════════════════════════
-          NAVBAR — тёмная полоска
+          NAVBAR — светлый с полосочками
       ══════════════════════════════ */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}
-        style={{ background: "#1A1714" }}>
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "shadow-sm" : ""}`}
+        style={{ background: "#F5EDD8", borderBottom: "2px solid #1A1714" }}>
 
-          {/* Лого */}
-          <a href="/" className="font-display font-black text-lg uppercase tracking-widest whitespace-nowrap"
-            style={{ color: "#F5EDD8" }}>
+        {/* Desktop */}
+        <div className="hidden lg:flex items-stretch" style={{ height: 44 }}>
+
+          {/* Лого — с правой границей */}
+          <a href="/"
+            className="flex items-center px-6 font-display font-black text-sm uppercase tracking-widest whitespace-nowrap shrink-0 hover:opacity-70 transition-opacity"
+            style={{ color: "#1A1714", borderRight: "2px solid #1A1714" }}>
             Ирина Завадская
           </a>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {NAV_LINKS.map(l => (
-              l.href.startsWith("/")
-                ? <Link key={l.label} to={l.href}
-                    className="font-body text-xs font-semibold uppercase tracking-widest transition-opacity hover:opacity-70"
-                    style={{ color: "#F5EDD8" }}>
-                    {l.label}
-                  </Link>
-                : <a key={l.label} href={l.href}
-                    className="font-body text-xs font-semibold uppercase tracking-widest transition-opacity hover:opacity-70"
-                    style={{ color: "#F5EDD8" }}>
-                    {l.label}
-                  </a>
-            ))}
-          </nav>
+          {/* Пункты меню — каждый с правой границей */}
+          {NAV_LINKS.map(l => (
+            l.href.startsWith("/")
+              ? <Link key={l.label} to={l.href}
+                  className="flex items-center px-5 font-body text-xs font-semibold uppercase tracking-widest hover:bg-black/5 transition-colors"
+                  style={{ color: "#1A1714", borderRight: "2px solid #1A1714" }}>
+                  {l.label}
+                </Link>
+              : <a key={l.label} href={l.href}
+                  className="flex items-center px-5 font-body text-xs font-semibold uppercase tracking-widest hover:bg-black/5 transition-colors"
+                  style={{ color: "#1A1714", borderRight: "2px solid #1A1714" }}>
+                  {l.label}
+                </a>
+          ))}
 
-          {/* CTA */}
-          <a href="#contact" className="btn btn-yellow hidden lg:inline-flex">
-            Обсудить проект
+          {/* Пустое пространство */}
+          <div className="flex-1" />
+
+          {/* CTA кнопка — в рамке, прижата к правому краю */}
+          <div className="flex items-center px-4" style={{ borderLeft: "2px solid #1A1714" }}>
+            <a href="#contact"
+              className="font-body text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full border-2 hover:bg-brand-yellow transition-colors whitespace-nowrap"
+              style={{ borderColor: "#1A1714", color: "#1A1714" }}>
+              Обсудить проект
+            </a>
+          </div>
+        </div>
+
+        {/* Mobile */}
+        <div className="lg:hidden flex items-center justify-between px-5 py-3">
+          <a href="/" className="font-display font-black text-sm uppercase tracking-widest" style={{ color: "#1A1714" }}>
+            Ирина Завадская
           </a>
-
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden" style={{ color: "#F5EDD8" }}>
+          <button onClick={() => setMobileOpen(!mobileOpen)} style={{ color: "#1A1714" }}>
             <Icon name={mobileOpen ? "X" : "Menu"} size={22} />
           </button>
         </div>
 
         {mobileOpen && (
-          <div className="lg:hidden px-6 py-5 flex flex-col gap-4 border-t" style={{ borderColor: "#2A2520", background: "#1A1714" }}>
+          <div className="lg:hidden flex flex-col" style={{ borderTop: "2px solid #1A1714", background: "#F5EDD8" }}>
             {NAV_LINKS.map(l => (
               l.href.startsWith("/")
                 ? <Link key={l.label} to={l.href} onClick={() => setMobileOpen(false)}
-                    className="font-body text-sm font-semibold uppercase tracking-widest" style={{ color: "#F5EDD8" }}>
+                    className="px-5 py-3 font-body text-xs font-semibold uppercase tracking-widest hover:bg-black/5"
+                    style={{ color: "#1A1714", borderBottom: "1.5px solid #1A171430" }}>
                     {l.label}
                   </Link>
                 : <a key={l.label} href={l.href} onClick={() => setMobileOpen(false)}
-                    className="font-body text-sm font-semibold uppercase tracking-widest" style={{ color: "#F5EDD8" }}>
+                    className="px-5 py-3 font-body text-xs font-semibold uppercase tracking-widest hover:bg-black/5"
+                    style={{ color: "#1A1714", borderBottom: "1.5px solid #1A171430" }}>
                     {l.label}
                   </a>
             ))}
-            <a href="#contact" className="btn btn-yellow mt-1 justify-center">Обсудить проект</a>
+            <div className="px-5 py-4">
+              <a href="#contact" className="btn btn-black w-full justify-center">Обсудить проект</a>
+            </div>
           </div>
         )}
       </header>
