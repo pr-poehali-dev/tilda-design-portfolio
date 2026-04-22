@@ -572,81 +572,100 @@ export default function Index() {
       <Divider />
 
       {/* ══════════════════════════════
-          ПОДВАЛ — 3 колонки + огромный текст
+          ПОДВАЛ — полосочки как в референсе
       ══════════════════════════════ */}
-      <footer style={{ background: "#1A1714" }}>
-        {/* Три колонки */}
-        <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
+      <footer style={{ background: "#E8B84B" }}>
+
+        {/* Верхняя граница */}
+        <div style={{ height: 2, background: "#1A1714" }} />
+
+        {/* Три колонки с вертикальными разделителями */}
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderBottom: "2px solid #1A1714" }}>
 
           {/* Навигация */}
-          <div>
-            <h4 className="font-display font-black text-sm uppercase tracking-widest mb-5" style={{ color: "#8A7A65" }}>
+          <div className="px-8 py-10" style={{ borderRight: "2px solid #1A1714" }}>
+            <h4 className="font-display font-black text-xs uppercase tracking-[0.2em] mb-5"
+              style={{ color: "#1A1714" }}>
               Навигация
             </h4>
-            <ul className="flex flex-col gap-2">
+            {/* 2 колонки ссылок */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
               {NAV_LINKS.map(l => (
-                <li key={l.label}>
-                  {l.href.startsWith("/")
-                    ? <Link to={l.href} className="font-body text-sm font-semibold uppercase tracking-wider transition-opacity hover:opacity-70" style={{ color: "#F5EDD8" }}>
-                        {l.label}
-                      </Link>
-                    : <a href={l.href} className="font-body text-sm font-semibold uppercase tracking-wider transition-opacity hover:opacity-70" style={{ color: "#F5EDD8" }}>
-                        {l.label}
-                      </a>
-                  }
-                </li>
+                l.href.startsWith("/")
+                  ? <Link key={l.label} to={l.href}
+                      className="font-body text-xs font-semibold uppercase tracking-wider hover:opacity-60 transition-opacity"
+                      style={{ color: "#1A1714" }}>
+                      {l.label}
+                    </Link>
+                  : <a key={l.label} href={l.href}
+                      className="font-body text-xs font-semibold uppercase tracking-wider hover:opacity-60 transition-opacity"
+                      style={{ color: "#1A1714" }}>
+                      {l.label}
+                    </a>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Контакты */}
-          <div>
-            <h4 className="font-display font-black text-sm uppercase tracking-widest mb-5" style={{ color: "#8A7A65" }}>
+          <div className="px-8 py-10" style={{ borderRight: "2px solid #1A1714" }}>
+            <h4 className="font-display font-black text-xs uppercase tracking-[0.2em] mb-5"
+              style={{ color: "#1A1714" }}>
               Контакты
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-2">
               {[
-                { icon:"Mail",      text:"ira@tildamaster.ru" },
-                { icon:"MessageCircle", text:"@ira_tilda (Telegram)" },
-                { icon:"MapPin",    text:"Москва / Онлайн" },
-              ].map(c => (
-                <li key={c.text} className="flex items-center gap-3 font-body text-sm" style={{ color: "#C8B89A" }}>
-                  <Icon name={c.icon} fallback="Circle" size={14} className="opacity-60 shrink-0" />
-                  {c.text}
+                "ira@tildamaster.ru",
+                "tildamaster.ru",
+                "@ira_tilda",
+              ].map(t => (
+                <li key={t} className="font-body text-xs font-semibold uppercase tracking-wider"
+                  style={{ color: "#1A1714" }}>
+                  {t}
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Соцсети */}
-          <div>
-            <h4 className="font-display font-black text-sm uppercase tracking-widest mb-5" style={{ color: "#8A7A65" }}>
-              Соцсети
+          <div className="px-8 py-10">
+            <h4 className="font-display font-black text-xs uppercase tracking-[0.2em] mb-5"
+              style={{ color: "#1A1714" }}>
+              Stay in Touch
             </h4>
-            <div className="flex gap-3 mb-6">
+            {/* Иконки соцсетей */}
+            <div className="flex gap-2 mb-5">
               {[
                 { icon:"Instagram", label:"Instagram" },
-                { icon:"Send",      label:"Telegram"  },
+                { icon:"Music",     label:"TikTok"    },
                 { icon:"Youtube",   label:"YouTube"   },
+                { icon:"Send",      label:"Telegram"  },
               ].map(s => (
                 <a key={s.label} href="#" title={s.label}
-                  className="w-10 h-10 rounded-full border flex items-center justify-center transition-opacity hover:opacity-70"
-                  style={{ borderColor: "#3A3530", color: "#F5EDD8" }}>
-                  <Icon name={s.icon} fallback="Link" size={16} />
+                  className="w-8 h-8 rounded-full border-2 flex items-center justify-center hover:opacity-60 transition-opacity"
+                  style={{ borderColor: "#1A1714", color: "#1A1714" }}>
+                  <Icon name={s.icon} fallback="Link" size={14} />
                 </a>
               ))}
             </div>
-            <p className="font-body text-xs leading-relaxed" style={{ color: "#6A5A4A" }}>
-              © 2025 Ирина Завадская.<br/>Все права защищены.
-            </p>
+            {/* Handle-кнопка */}
+            <a href="#" className="inline-flex items-center font-body font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full border-2 hover:opacity-70 transition-opacity"
+              style={{ background: "#D4622A", borderColor: "#D4622A", color: "#F5EDD8" }}>
+              @ira_tilda
+            </a>
           </div>
         </div>
 
-        {/* Огромный текст снизу — как в референсе */}
-        <div className="overflow-hidden" style={{ borderTop: "1.5px solid #2A2520" }}>
-          <p className="font-display font-black uppercase text-center leading-none select-none pointer-events-none"
-            style={{ fontSize: "clamp(60px, 14vw, 180px)", color: "#2A2520", letterSpacing: "-0.02em",
-              marginBottom: "-0.15em", paddingTop: "0.1em" }}>
+        {/* Огромный текст — обрезан снизу, как в референсе */}
+        <div className="overflow-hidden" style={{ lineHeight: 0 }}>
+          <p className="font-display font-black uppercase leading-none select-none pointer-events-none"
+            style={{
+              fontSize: "clamp(80px, 17vw, 220px)",
+              color: "#1A1714",
+              letterSpacing: "-0.025em",
+              marginBottom: "-0.18em",
+              paddingLeft: "0.05em",
+              whiteSpace: "nowrap",
+            }}>
             Ирина Завадская
           </p>
         </div>
