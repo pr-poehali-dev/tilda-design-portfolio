@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMG = "https://cdn.poehali.dev/projects/38ad1151-23fa-489a-925f-68dc1a0c1296/files/a128673b-f808-4535-a2ef-2d6e19486fd2.jpg";
@@ -28,15 +29,7 @@ const SERVICES = [
   { icon:"SearchCheck", num:"04", title:"Аудит и улучшение",   desc:"Нахожу слабые места и делаю сайт быстрее, красивее, эффективнее.",    price:"от 3 000 ₽",  emoji:"🌼", bg:"#D4EECC" },
 ];
 
-const PORTFOLIO_ITEMS = [
-  { id:1, category:"лендинг",    title:"Студия красоты",    sub:"Продающий лендинг с онлайн-записью",       img:"https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=450&fit=crop" },
-  { id:2, category:"магазин",    title:"Бутик одежды",      sub:"Интернет-магазин с каталогом и корзиной",  img:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=450&fit=crop" },
-  { id:3, category:"корпоратив", title:"IT-компания",        sub:"Корпоративный сайт с командой и услугами", img:"https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=450&fit=crop" },
-  { id:4, category:"лендинг",    title:"Онлайн-школа",      sub:"Курс по продвижению — перенос из Figma",   img:"https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=450&fit=crop" },
-  { id:5, category:"магазин",    title:"Цветочный магазин", sub:"Магазин с доставкой и фильтром",           img:"https://images.unsplash.com/photo-1487530811015-780ce39de73d?w=600&h=450&fit=crop" },
-  { id:6, category:"корпоратив", title:"Фотограф",           sub:"Портфолио с галереей и формой заявки",    img:"https://images.unsplash.com/photo-1452780212461-8ef04b6ddfc4?w=600&h=450&fit=crop" },
-];
-const PORTFOLIO_CATS = ["все","лендинг","магазин","корпоратив"];
+
 
 const REVIEWS = [
   { name:"Светлана В.", role:"Владелец студии красоты", text:"Ирина перенесла наш макет из Figma за 3 дня. Всё точно, аккуратно — сайт получился лучше, чем мы ожидали!", stars:5, bg:"#EDE0FF" },
@@ -132,7 +125,6 @@ function Card({ bg, children, className="" }: { bg: string; children: React.Reac
 
 export default function Index() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeFilter, setActiveFilter] = useState("все");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -140,8 +132,6 @@ export default function Index() {
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
-
-  const filtered = activeFilter === "все" ? PORTFOLIO_ITEMS : PORTFOLIO_ITEMS.filter(i => i.category === activeFilter);
 
   return (
     <div className="font-body text-brand-charcoal overflow-x-hidden" style={{ background:"#F5F0FF" }}>
@@ -347,62 +337,76 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ВОЛНА → Портфолио */}
-      <WaveDown top="#FFFBF0" bot="#ffffff" />
+      {/* ВОЛНА → Портфолио-баннер */}
+      <WaveDown top="#FFFBF0" bot="#F0EDE5" />
 
-      {/* ── ПОРТФОЛИО ── */}
-      <section id="portfolio" className="py-20 px-6 relative" style={{ background:"#ffffff" }}>
-        <FloatDecor items={[
-          { emoji:"🌷", top:"4%",  left:"2%",  rotate:"-8deg", size:"2rem"   },
-          { emoji:"💜", top:"52%", right:"1%", rotate:"10deg", size:"1.6rem" },
-        ]} />
-        <div className="max-w-6xl mx-auto relative z-10">
-          <Anim>
-            <div className="text-center mb-10">
-              <span className="tag tag-dark mb-4 inline-block">🌸 Мои работы</span>
-              <h2 className="font-display text-4xl md:text-5xl text-brand-charcoal mb-2">Портфолио</h2>
-              <p className="font-accent italic text-brand-lavender-dark text-xl">— проекты, которыми горжусь</p>
+      {/* ── PORTFOLIO BANNER ── */}
+      <section id="portfolio" className="relative overflow-hidden py-0" style={{ background:"#F0EDE5" }}>
+        <Anim>
+          <div className="relative min-h-[520px] md:min-h-[620px] flex items-center justify-center select-none">
+
+            {/* Огромный текст PORT FOLIO — двумя строками */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 leading-none">
+              <span className="font-display font-black text-brand-charcoal"
+                style={{ fontSize:"clamp(100px,20vw,220px)", lineHeight:0.88, letterSpacing:"-0.02em" }}>
+                PORT
+              </span>
+              <span className="font-display font-black text-brand-charcoal"
+                style={{ fontSize:"clamp(100px,20vw,220px)", lineHeight:0.88, letterSpacing:"-0.02em" }}>
+                FOLIO
+              </span>
             </div>
-          </Anim>
-          <Anim>
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {PORTFOLIO_CATS.map(cat=>(
-                <button key={cat} onClick={()=>setActiveFilter(cat)}
-                  className={`font-body text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-full border-2 border-brand-black transition-all
-                    ${activeFilter===cat
-                      ? "bg-brand-charcoal text-white shadow-[3px_3px_0_#9B7CC8]"
-                      : "bg-brand-lavender-light text-brand-charcoal hover:shadow-[3px_3px_0_#1E1B1E]"
-                    }`}>
-                  {cat}
-                </button>
-              ))}
+
+            {/* Фото верхнее левое */}
+            <div className="absolute top-[6%] left-[4%] md:left-[7%] z-10">
+              <div className="border-2 border-brand-black shadow-[4px_4px_0_#1E1B1E] overflow-hidden"
+                style={{ width:"clamp(140px,18vw,240px)", aspectRatio:"3/4" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=540&fit=crop"
+                  alt="проект" className="w-full h-full object-cover" />
+              </div>
             </div>
-          </Anim>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((item,i)=>(
-              <Anim key={item.id} delay={i*60}>
-                <Card bg="#fff" className="overflow-hidden cursor-pointer group">
-                  <div className="relative overflow-hidden h-48 border-b-2 border-brand-black">
-                    <img src={item.img} alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span className="absolute top-3 left-3 tag tag-lavender">{item.category}</span>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-xl mb-1 text-brand-charcoal">{item.title}</h3>
-                    <p className="font-body text-brand-charcoal/55 text-sm">{item.sub}</p>
-                    <div className="mt-4 flex items-center gap-2 font-body text-xs font-bold tracking-widest uppercase text-brand-lavender-dark group-hover:gap-3 transition-all">
-                      Смотреть <Icon name="ArrowRight" size={13} />
-                    </div>
-                  </div>
-                </Card>
-              </Anim>
-            ))}
+
+            {/* Фото правое среднее */}
+            <div className="absolute top-[28%] right-[2%] md:right-[6%] z-10">
+              <div className="border-2 border-brand-black shadow-[4px_4px_0_#1E1B1E] overflow-hidden"
+                style={{ width:"clamp(130px,16vw,210px)", aspectRatio:"4/3" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=420&h=320&fit=crop"
+                  alt="проект" className="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            {/* Фото нижнее левое */}
+            <div className="absolute bottom-[5%] left-[6%] md:left-[10%] z-10">
+              <div className="border-2 border-brand-black shadow-[4px_4px_0_#1E1B1E] overflow-hidden"
+                style={{ width:"clamp(120px,15vw,200px)", aspectRatio:"3/4" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1487530811015-780ce39de73d?w=380&h=500&fit=crop"
+                  alt="проект" className="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            {/* Кнопка поверх — зелёно-жёлтый овал как в референсе */}
+            <Link to="/portfolio"
+              className="relative z-20 flex items-center gap-3 font-body font-bold text-brand-charcoal transition-all hover:scale-105 active:scale-95"
+              style={{
+                background: "#C8E86A",
+                border: "2px solid #1E1B1E",
+                borderRadius: "999px",
+                padding: "0.9rem 2.2rem",
+                fontSize: "1.1rem",
+                boxShadow: "4px 4px 0 #1E1B1E",
+              }}>
+              Смотреть работы <span className="text-xl">→</span>
+            </Link>
+
           </div>
-        </div>
+        </Anim>
       </section>
 
       {/* ВОЛНА → Мастер-классы */}
-      <WaveDown top="#ffffff" bot="#FFF9CC" />
+      <WaveDown top="#F0EDE5" bot="#FFF9CC" />
 
       {/* ── МАСТЕР-КЛАССЫ ── */}
       <section id="workshops" className="py-20 px-6 relative overflow-hidden" style={{ background:"#FFF9CC" }}>
